@@ -1,0 +1,19 @@
+div#leftpart {
+    background-color: #6DD4E8;
+    width: 300px;
+    height: 100%;
+    float: left;
+}
+
+div#leftpart select {
+    margin: 15px;
+}
+
+body {
+    background-color: #cceecc;
+}
+
+div#rightpart {
+    height: 100%;
+    background-color: #E8816D;
+}
