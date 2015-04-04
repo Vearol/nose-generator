@@ -6,7 +6,9 @@ div#leftpart {
 }
 
 div#leftpart select {
-    margin: 15px;
+    margin-top: 10px;
+    margin-left: 15px;
+    width: 250px;
 }
 
 body {
@@ -14,6 +16,7 @@ body {
 }
 
 div#rightpart {
+    margin-left: 310px;
     height: 100%;
     background-color: #E8816D;
 }
