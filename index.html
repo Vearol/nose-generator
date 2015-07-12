@@ -1,17 +1,66 @@
 <html>
     <head>
-        <title>Faces generator</title>
-        <link rel='stylesheet' href='styles/styles.css' type='text/css' />        
+        <title>step one</title>
+        <script src="/home/lyubomyr/Projects/JavaScript/scripts/head.js"></script>
+        <script src="/home/lyubomyr/Projects/JavaScript/scripts/FaceObject.js"></script>        
+        <script type="text/javascript">
+
+         var HumanFace;
+         
+         window.onload = function () {
+             HumanFace = new FaceObject();
+
+             HumanFace.render('drawingCanvas');
+             fillHeadSelector();
+         };
+
+         function fillHeadSelector() {
+             var headElement = document.getElementById('headSelector');
+             for (var i=0; i < ListOfHeads.length; i++) {
+                 var option = document.createElement('option');
+                 option.text = ListOfHeads[i].name;
+                 headElement.add(option);
+             }
+         }
+        </script>
+        <style type="text/css">
+         div.leftpart {
+             background-color: #6DD4E8;
+             width: 300px;
+             height: 100%;
+             float: left;
+         }
+
+         div.leftpart select {
+             margin: 15px;
+             width: 50%;
+         }
+         
+         body {
+             background-color: #cceecc;
+         }
+         
+         div.rightpart {
+             background-color: #E8816D;
+             height: 100%;
+         }
+        </style>
     </head>
     <body>
-        <div id="leftPart">
-            <select>
-                <option>Test option 1</option>
-                <option>Test option 2</option>
+        <div class="leftpart">
+            <select id="headSelector" onchange="selectHead(this.selectedIndex, HumanFace, 'drawingCanvas')">
             </select>
+            <!-- <select>
+            <option value="eye1">head_1</option>
+            <option value="eye2">head_2</option>
+            </select>
+            <select>
+            <option value="mouth1">head_1</option>
+            <option value="mouth2">head_2</option>
+            </select>             -->
         </div>
-        <div id="rightPart">
-            Text here
+        <div class="rightpart">
+            <canvas id="drawingCanvas" width="200" height="200" />
         </div>
     </body>
 </html>
