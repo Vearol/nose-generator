@@ -18,17 +18,14 @@
         <![endif]-->
 
         <script src="js/head.js"></script>
-        <script src="js/FaceObject.js"></script>        
+        <!-- <script src="js/beard.js"></script> -->
         <script type="text/javascript">
 
-         var HumanFace;
-         
-         window.onload = function () {
-             HumanFace = new FaceObject();
-
-             HumanFace.render('drawingCanvas');
-             fillHeadSelector();
-         };
+         function changeSVG(index) {
+             var head = document.getElementById('head');
+             var path =  ListOfHeads[index].path;
+             head.setAttribute('d', path);
+         }
 
          function fillHeadSelector() {
              var headElement = document.getElementById('headSelector');
@@ -67,22 +64,22 @@
          }
         </style>
     </head>
-    <body>
+    <body onload="fillHeadSelector()">    
         <div class="leftpart">
             <button class="btn btn-primary">Save to SVG</button>
-            <select id="headSelector" class="form-control" onchange="selectHead(this.selectedIndex, HumanFace, 'drawingCanvas')">
+            <select id="headSelector" class="form-control" onchange="changeSVG(this.selectedIndex)">
             </select>
-            <!-- <select>
-            <option value="eye1">head_1</option>
-            <option value="eye2">head_2</option>
-            </select>
-            <select>
-            <option value="mouth1">head_1</option>
-            <option value="mouth2">head_2</option>
-            </select>             -->
         </div>
         <div class="rightpart">
-            <canvas id="drawingCanvas" width="200" height="200" />
+            <svg id="mySVG"
+                 version="1.1"
+                 baseProfile="full"
+                 viewBox="0 0 30 30"
+                 height="500"
+                 width="500"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path id="head" d="" />
+            </svg>
         </div>
         <script src="js/bootstrap.min.js"></script>
     </body>
