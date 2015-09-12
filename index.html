@@ -19,9 +19,14 @@
 
         <script src="js/head.js"></script>
         <!-- <script src="js/beard.js"></script> -->
+        <script src="js/ears.js"></script>
+        <script src="js/mouth.js"></script>
+        <script src="js/eyes.js"></script>
+        <script src="js/hair.js"></script>
+        <script src="js/beards.js"></script>
         <script type="text/javascript">
 
-         function changeSVG(index) {
+         function changeHead(index) {
              var head = document.getElementById('head');
              var path =  ListOfHeads[index].path;
              head.setAttribute('d', path);
@@ -35,6 +40,82 @@
                  headElement.add(option);
              }
          }
+         
+         function changeBeard(index) {
+             var beard = document.getElementById('beard');
+             var path =  ListOfBeards[index].path;
+             head.setAttribute('d', path);
+         }
+
+         function fillBeardSelector() {
+             var beardElement = document.getElementById('beardSelector');
+             for (var i=0; i < ListOfBeards.length; i++) {
+                 var option = document.createElement('option');
+                 option.text = ListOfBeards[i].name;
+                 beardElement.add(option);
+             }
+         }
+         
+         function changeEyes(index) {
+             var eyes = document.getElementById('eyes');
+             var path =  ListOfEyes[index].path;
+             head.setAttribute('d', path);
+         }
+
+         function fillEyesSelector() {
+             var eyesElement = document.getElementById('eyesSelector');
+             for (var i=0; i < ListOfEyes.length; i++) {
+                 var option = document.createElement('option');
+                 option.text = ListOfEyes[i].name;
+                 eyesElement.add(option);
+             }
+         }
+         
+         function changeMouth(index) {
+             var mouth = document.getElementById('mouth');
+             var path =  ListOfLips[index].path;
+             mouth.setAttribute('d', path);
+         }
+
+         function fillMouthSelector() {
+             var mouthElement = document.getElementById('mouthSelector');
+             for (var i=0; i < ListOfLips.length; i++) {
+                 var option = document.createElement('option');
+                 option.text = ListOfLips[i].name;
+                 mouthElement.add(option);
+             }
+         }
+         
+         function changeHair(index) {
+             var hair = document.getElementById('hair');
+             var path =  ListOfHairs[index].path;
+             hair.setAttribute('d', path);
+         }
+
+         function fillHairSelector() {
+             var hairElement = document.getElementById('hairSelector');
+             for (var i=0; i < ListOfHairs.length; i++) {
+                 var option = document.createElement('option');
+                 option.text = ListOfHairs[i].name;
+                 hairElement.add(option);
+             }
+         }
+
+         function changeEars(index) {
+             var ears = document.getElementById('ears');
+             var path =  ListOfEars[index].path;
+             ears.setAttribute('d', path);
+         }
+
+         function fillEarsSelector() {
+             var earsElement = document.getElementById('earsSelector');
+             for (var i=0; i < ListOfEars.length; i++) {
+                 var option = document.createElement('option');
+                 option.text = ListOfEars[i].name;
+                 earsElement.add(option);
+             }
+         }
+
         </script>
         <style type="text/css">
          html, body {
@@ -64,10 +145,14 @@
          }
         </style>
     </head>
-    <body onload="fillHeadSelector()">    
+    <body onload="fillHeadSelector()" onload="fillMouthSelector" >    
         <div class="leftpart">
             <button class="btn btn-primary">Save to SVG</button>
-            <select id="headSelector" class="form-control" onchange="changeSVG(this.selectedIndex)">
+            <select id="headSelector" class="form-control" onchange="changeHead(this.selectedIndex)">
+            </select>
+            <select id="beardSelector" class="form-control" onchange="changeBeard(this.selectedIndex)">
+            </select>
+            <select id="mouthSelector" class="form-control" onchange="changeMouth(this.selectedIndex)">
             </select>
         </div>
         <div class="rightpart">
