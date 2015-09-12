@@ -137,11 +137,10 @@
              width: 300px;
              height: 100%;
              float: left;
-             padding: 15px;
+             padding: 25px;
          }
 
          div.leftpart select {
-             margin-top: 15px;
              width: 230px;
          }
          
@@ -157,20 +156,38 @@
     </head>
     <body onload="mainLoad()" >    
         <div class="leftpart">
+            <div class="form-group">
+                <label for="headSelector" class="control-label">Head:</label>
+                <select id="headSelector" class="form-control" onchange="changeHead(this.selectedIndex)">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="beardSelector" class="control-label">Beard:</label>
+                <select id="BeardSelector" class="form-control" onchange="changeBeard(this.selectedIndex)">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mouthSelector" class="control-label">Mouth:</label>
+                <select id="mouthSelector" class="form-control" onchange="changeMouth(this.selectedIndex)">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="hairSelector" class="control-label">Hair:</label>
+                <select id="hairSelector" class="form-control" onchange="changeHair(this.selectedIndex)">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="eyesSelector" class="control-label">Eyes:</label>
+                <select id="eyesSelector" class="form-control" onchange="changeEyes(this.selectedIndex)">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="earsSelector" class="control-label">Ears:</label>
+                <select id="earsSelector" class="form-control" onchange="changeEars(this.selectedIndex)">
+                </select>
+            </div>
+            <br/> <br/>
             <button class="btn btn-primary">Save to SVG</button>
-            <select id="headSelector" class="form-control" onchange="changeHead(this.selectedIndex)">
-            </select>
-            <select id="beardSelector" class="form-control" onchange="changeBeard(this.selectedIndex)">
-            </select>
-            <select id="mouthSelector" class="form-control" onchange="changeMouth(this.selectedIndex)">
-            </select>
-            <select id="hairSelector" class="form-control" onchange="changeHair(this.selectedIndex)">
-            </select>
-            <select id="eyesSelector" class="form-control" onchange="changeEyes(this.selectedIndex)">
-            </select>
-            <select id="earsSelector" class="form-control" onchange="changeEars(this.selectedIndex)">
-            </select>
-        
            
         </div>
         <div class="rightpart">
