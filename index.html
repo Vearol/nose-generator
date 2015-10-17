@@ -44,7 +44,7 @@
          function changeBeard(index) {
              var beard = document.getElementById('beard');
              var path =  ListOfBeards[index].path;
-             head.setAttribute('d', path);
+             beard.setAttribute('d', path);
          }
 
          function fillBeardSelector() {
@@ -59,7 +59,7 @@
          function changeEyes(index) {
              var eyes = document.getElementById('eyes');
              var path =  ListOfEyes[index].path;
-             head.setAttribute('d', path);
+             eyes.setAttribute('d', path);
          }
 
          function fillEyesSelector() {
@@ -74,7 +74,7 @@
          function changeMouth(index) {
              var mouth = document.getElementById('mouth');
              var path =  ListOfLips[index].path;
-             head.setAttribute('d', path);
+             mouth.setAttribute('d', path);
          }
 
          function fillMouthSelector() {
@@ -89,7 +89,7 @@
          function changeHair(index) {
              var hair = document.getElementById('hair');
              var path =  ListOfHairs[index].path;
-             head.setAttribute('d', path);
+             hair.setAttribute('d', path);
          }
 
          function fillHairSelector() {
@@ -104,7 +104,7 @@
          function changeEars(index) {
              var ears = document.getElementById('ears');
              var path =  ListOfEars[index].path;
-             head.setAttribute('d', path);
+             ears.setAttribute('d', path);
          }
 
          function fillEarsSelector() {
@@ -245,7 +245,12 @@
              height="500"
              width="500"
              xmlns="http://www.w3.org/2000/svg">
-          <path id="head" d="" />
+            <path id="head" d="" />
+            <path id="mouth" d="" />
+            <path id="eyes" d="" />
+            <path id="ears" d="" />
+            <path id="hair" d="" />
+            <path id="beard" d="" />
         </svg>
       </div>
       <script src="js/bootstrap.min.js"></script>
