@@ -1,258 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Nose Generator</title>
-        <script src="js/jquery-1.11.3.min.js" ></script>
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Nose Generator</title>
+    <script src="js/jquery-1.11.3.min.js" ></script>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-        <script src="js/head.js"></script>
-        <!-- <script src="js/beard.js"></script> -->
-        <script src="js/ears.js"></script>
-        <script src="js/mouth.js"></script>
-        <script src="js/eyes.js"></script>
-        <script src="js/hair.js"></script>
-        <script src="js/beards.js"></script>
-        <script type="text/javascript">
+    <script src="js/head.js"></script>
+    <!-- <script src="js/beard.js"></script> -->
+    <script src="js/ears.js"></script>
+    <script src="js/mouth.js"></script>
+    <script src="js/eyes.js"></script>
+    <script src="js/hair.js"></script>
+    <script src="js/beards.js"></script>
+    <script type="text/javascript">
 
-         function changeHead(index) {
-             var head = document.getElementById('head');
-             var path =  ListOfHeads[index].path;
-             head.setAttribute('d', path);
-         }
+     function changeHead(index) {
+       var pathes =  ListOfHeads[index].path;
 
-         function fillHeadSelector() {
-             var headElement = document.getElementById('headSelector');
-             for (var i=0; i < ListOfHeads.length; i++) {
-                 var option = document.createElement('option');
-                 option.text = ListOfHeads[i].name;
-                 headElement.add(option);
-             }
-         }
+       for (var i = 0; i < pathes.length; i++) {
+         var head = document.getElementById('head' + i);
+         head.setAttribute('d', pathes[i]);
+       }
+     }
 
-         function changeBeard(index) {
-             var beard = document.getElementById('beard');
-             var path =  ListOfBeards[index].path;
-             beard.setAttribute('d', path);
-         }
+     function fillHeadSelector() {
+       var headElement = document.getElementById('headSelector');
+       for (var i=0; i < ListOfHeads.length; i++) {
+         var option = document.createElement('option');
+         option.text = ListOfHeads[i].name;
+         headElement.add(option);
+       }
+     }
 
-         function fillBeardSelector() {
-             var beardElement = document.getElementById('beardSelector');
-             for (var i=0; i < ListOfBeards.length; i++) {
-                 var option = document.createElement('option');
-                 option.text = ListOfBeards[i].name;
-                 beardElement.add(option);
-             }
-         }
+     function changeBeard(index) {
+       var beard = document.getElementById('beard');
+       var path =  ListOfBeards[index].path;
+       beard.setAttribute('d', path);
+     }
 
-         function changeEyes(index) {
-             var eyes = document.getElementById('eyes');
-             var path =  ListOfEyes[index].path;
-             eyes.setAttribute('d', path);
-         }
+     function fillBeardSelector() {
+       var beardElement = document.getElementById('beardSelector');
+       for (var i=0; i < ListOfBeards.length; i++) {
+         var option = document.createElement('option');
+         option.text = ListOfBeards[i].name;
+         beardElement.add(option);
+       }
+     }
 
-         function fillEyesSelector() {
-             var eyesElement = document.getElementById('eyesSelector');
-             for (var i=0; i < ListOfEyes.length; i++) {
-                 var option = document.createElement('option');
-                 option.text = ListOfEyes[i].name;
-                 eyesElement.add(option);
-             }
-         }
+     function changeEyes(index) {
+       var eyes = document.getElementById('eyes');
+       var path =  ListOfEyes[index].path;
+       eyes.setAttribute('d', path);
+     }
 
-         function changeMouth(index) {
-             var mouth = document.getElementById('mouth');
-             var path =  ListOfLips[index].path;
-             mouth.setAttribute('d', path);
-         }
+     function fillEyesSelector() {
+       var eyesElement = document.getElementById('eyesSelector');
+       for (var i=0; i < ListOfEyes.length; i++) {
+         var option = document.createElement('option');
+         option.text = ListOfEyes[i].name;
+         eyesElement.add(option);
+       }
+     }
 
-         function fillMouthSelector() {
-             var mouthElement = document.getElementById('mouthSelector');
-             for (var i=0; i < ListOfLips.length; i++) {
-                 var option = document.createElement('option');
-                 option.text = ListOfLips[i].name;
-                 mouthElement.add(option);
-             }
-         }
+     function changeMouth(index) {
+       var mouth = document.getElementById('mouth');
+       var path =  ListOfLips[index].path;
+       mouth.setAttribute('d', path);
+     }
 
-         function changeHair(index) {
-             var hair = document.getElementById('hair');
-             var path =  ListOfHairs[index].path;
-             hair.setAttribute('d', path);
-         }
+     function fillMouthSelector() {
+       var mouthElement = document.getElementById('mouthSelector');
+       for (var i=0; i < ListOfLips.length; i++) {
+         var option = document.createElement('option');
+         option.text = ListOfLips[i].name;
+         mouthElement.add(option);
+       }
+     }
 
-         function fillHairSelector() {
-             var hairElement = document.getElementById('hairSelector');
-             for (var i=0; i < ListOfHairs.length; i++) {
-                 var option = document.createElement('option');
-                 option.text = ListOfHairs[i].name;
-                 hairElement.add(option);
-             }
-         }
+     function changeHair(index) {
+       var hair = document.getElementById('hair');
+       var path =  ListOfHairs[index].path;
+       hair.setAttribute('d', path);
+     }
 
-         function changeEars(index) {
-             var ears = document.getElementById('ears');
-             var path =  ListOfEars[index].path;
-             ears.setAttribute('d', path);
-         }
+     function fillHairSelector() {
+       var hairElement = document.getElementById('hairSelector');
+       for (var i=0; i < ListOfHairs.length; i++) {
+         var option = document.createElement('option');
+         option.text = ListOfHairs[i].name;
+         hairElement.add(option);
+       }
+     }
 
-         function fillEarsSelector() {
-             var earsElement = document.getElementById('earsSelector');
-             for (var i=0; i < ListOfEars.length; i++) {
-                 var option = document.createElement('option');
-                 option.text = ListOfEars[i].name;
-                 earsElement.add(option);
-             }
-         }
+     function changeEars(index) {
+       var ears = document.getElementById('ears');
+       var path =  ListOfEars[index].path;
+       ears.setAttribute('d', path);
+     }
 
-         function mainLoad() {
-             fillHeadSelector();
-             fillMouthSelector();
-             fillHairSelector();
-             fillEarsSelector();
-             fillEyesSelector();
-             fillBeardSelector();
-         }
+     function fillEarsSelector() {
+       var earsElement = document.getElementById('earsSelector');
+       for (var i=0; i < ListOfEars.length; i++) {
+         var option = document.createElement('option');
+         option.text = ListOfEars[i].name;
+         earsElement.add(option);
+       }
+     }
 
-         function getSVG() {
-           //get svg element.
-           var svg = document.getElementById("mySVG");
+     function mainLoad() {
+       fillHeadSelector();
+       fillMouthSelector();
+       fillHairSelector();
+       fillEarsSelector();
+       fillEyesSelector();
+       fillBeardSelector();
+     }
 
-           //get svg source.
-           var serializer = new XMLSerializer();
-           var source = serializer.serializeToString(svg);
+     function getSVG() {
+       //get svg element.
+       var svg = document.getElementById("mySVG");
 
-           //add name spaces.
-           if(!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)){
-             source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
-           }
-           if(!source.match(/^<svg[^>]+"http\:\/\/www\.w3\.org\/1999\/xlink"/)){
-             source = source.replace(/^<svg/, '<svg xmlns:xlink="http://www.w3.org/1999/xlink"');
-           }
+       //get svg source.
+       var serializer = new XMLSerializer();
+       var source = serializer.serializeToString(svg);
 
-           //add xml declaration
-           source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
+       //add name spaces.
+       if(!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)){
+         source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+       }
+       if(!source.match(/^<svg[^>]+"http\:\/\/www\.w3\.org\/1999\/xlink"/)){
+         source = source.replace(/^<svg/, '<svg xmlns:xlink="http://www.w3.org/1999/xlink"');
+       }
 
-           //convert svg source to URI data scheme.
-           var url = "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(source);
+       //add xml declaration
+       source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
 
-           //set url value to a element's href attribute.
-           document.getElementById("svgLink").href = url;
-           //you can download svg file by right click menu.
-         }
+       //convert svg source to URI data scheme.
+       var url = "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(source);
 
-        </script>
-        <style type="text/css">
-         html, body {
-             height: 100%;
-         }
+       //set url value to a element's href attribute.
+       document.getElementById("svgLink").href = url;
+       //you can download svg file by right click menu.
+     }
 
-         div.leftpart {
-             background-color: #6DD4E8;
-             width: 300px;
-             height: 100%;
-             float: left;
-             padding: 25px;
-         }
+    </script>
+    <style type="text/css">
+     html, body {
+       height: 100%;
+     }
 
-         div.leftpart select {
-             width: 230px;
-         }
+     div.leftpart {
+       background-color: #6DD4E8;
+       width: 300px;
+       height: 100%;
+       float: left;
+       padding: 25px;
+     }
 
-         body {
-             background-color: #cceecc;
-         }
+     div.leftpart select {
+       width: 230px;
+     }
 
-         div.rightpart {
-             background-color: #E8816D;
-             height: 100%;
-         }
-        </style>
-    </head>
-    <body onload="mainLoad()" >
+     body {
+       background-color: #cceecc;
+     }
 
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
+     div.rightpart {
+       background-color: #E8816D;
+       height: 100%;
+     }
+    </style>
+  </head>
+  <body onload="mainLoad()" >
 
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Download SVG from the link below</h4>
-            </div>
-            <div class="modal-body">
-              <p><a id="svgLink">Generated SVG link</a></p>
-              <p>Right-click the link and select "Save link as..."</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Download SVG from the link below</h4>
+          </div>
+          <div class="modal-body">
+            <p><a id="svgLink">Generated SVG link</a></p>
+            <p>Right-click the link and select "Save link as..."</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="leftpart">
-        <div class="form-group">
-          <label for="headSelector" class="control-label">Head:</label>
-          <select id="headSelector" class="form-control" onchange="changeHead(this.selectedIndex)">
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="beardSelector" class="control-label">Beard:</label>
-          <select id="beardSelector" class="form-control" onchange="changeBeard(this.selectedIndex)">
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="mouthSelector" class="control-label">Mouth:</label>
-          <select id="mouthSelector" class="form-control" onchange="changeMouth(this.selectedIndex)">
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="hairSelector" class="control-label">Hair:</label>
-          <select id="hairSelector" class="form-control" onchange="changeHair(this.selectedIndex)">
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="eyesSelector" class="control-label">Eyes:</label>
-          <select id="eyesSelector" class="form-control" onchange="changeEyes(this.selectedIndex)">
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="earsSelector" class="control-label">Ears:</label>
-          <select id="earsSelector" class="form-control" onchange="changeEars(this.selectedIndex)">
-          </select>
-        </div>
-        <br/>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" onClick="getSVG()">Save SVG</button>
+    <div class="leftpart">
+      <div class="form-group">
+        <label for="headSelector" class="control-label">Head:</label>
+        <select id="headSelector" class="form-control" onchange="changeHead(this.selectedIndex)">
+        </select>
       </div>
-      <div class="rightpart">
-        <svg id="mySVG"
-             version="1.1"
-             baseProfile="full"
-             viewBox="0 0 500 500"
-             height="500"
-             width="500"
-             xmlns="http://www.w3.org/2000/svg">
-            <path id="head" d="" />
-            <path id="mouth" d="" />
-            <path id="eyes" d="" />
-            <path id="ears" d="" />
-            <path id="hair" d="" />
-            <path id="beard" d="" />
-        </svg>
+      <div class="form-group">
+        <label for="beardSelector" class="control-label">Beard:</label>
+        <select id="beardSelector" class="form-control" onchange="changeBeard(this.selectedIndex)">
+        </select>
       </div>
-      <script src="js/bootstrap.min.js"></script>
-    </body>
+      <div class="form-group">
+        <label for="mouthSelector" class="control-label">Mouth:</label>
+        <select id="mouthSelector" class="form-control" onchange="changeMouth(this.selectedIndex)">
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="hairSelector" class="control-label">Hair:</label>
+        <select id="hairSelector" class="form-control" onchange="changeHair(this.selectedIndex)">
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="eyesSelector" class="control-label">Eyes:</label>
+        <select id="eyesSelector" class="form-control" onchange="changeEyes(this.selectedIndex)">
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="earsSelector" class="control-label">Ears:</label>
+        <select id="earsSelector" class="form-control" onchange="changeEars(this.selectedIndex)">
+        </select>
+      </div>
+      <br/>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" onClick="getSVG()">Save SVG</button>
+    </div>
+    <div class="rightpart">
+      <svg id="mySVG"
+           version="1.1"
+           baseProfile="full"
+           viewBox="0 0 500 500"
+           height="500"
+           width="500"
+           xmlns="http://www.w3.org/2000/svg">
+        <path id="head0" d="" />
+        <path id="head1" d="" />
+        <path id="mouth" d="" />
+        <path id="eyes" d="" />
+        <path id="ears" d="" />
+        <path id="hair" d="" />
+        <path id="beard" d="" />
+      </svg>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>
