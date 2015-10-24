@@ -43,35 +43,35 @@
          headElement.add(option);
        }
      }
-     
+
      function changeEyebrows(index) {
          var pathes =  ListOfEyebrows[index].path;
-         
+
          for (var i = 0; i < pathes.length; i++) {
-             var eyes = document.getElementById('Eyebrow' + i);
-             Eyebrow.setAttribute('d', pathes[i]);
+             var eyebrow = document.getElementById('eyebrow' + i);
+             eyebrow.setAttribute('d', pathes[i]);
          }
      }
-     
+
 
      function fillEyebrowSelector() {
-       var EyebrowElement = document.getElementById('EyebrowSelector');
+       var eyebrowElement = document.getElementById('eyebrowSelector');
        for (var i=0; i < ListOfEyebrows.length; i++) {
          var option = document.createElement('option');
          option.text = ListOfEyebrows[i].name;
-         EyebrowElement.add(option);
+         eyebrowElement.add(option);
        }
      }
-     
+
      function changeEyes(index) {
          var pathes =  ListOfEyes[index].path;
-         
+
          for (var i = 0; i < pathes.length; i++) {
              var eyes = document.getElementById('eyes' + i);
              eyes.setAttribute('d', pathes[i]);
          }
      }
-     
+
 
      function fillEyesSelector() {
        var eyesElement = document.getElementById('eyesSelector');
@@ -81,10 +81,10 @@
          eyesElement.add(option);
        }
      }
-     
+
      function changeMouth(index) {
      var pathes =  ListOfLips[index].path;
-     
+
      for (var i = 0; i < pathes.length; i++) {
            var mouth = document.getElementById('mouth' + i);
            mouth.setAttribute('d', pathes[i]);
@@ -102,13 +102,13 @@
 
      function changeHair(index) {
          var pathes =  ListOfHairs[index].path;
-         
+
          for (var i = 0; i < pathes.length; i++) {
              var hair = document.getElementById('hair' + i);
              hair.setAttribute('d', pathes[i]);
          }
      }
-     
+
 
      function fillHairSelector() {
        var hairElement = document.getElementById('hairSelector');
@@ -118,10 +118,10 @@
          hairElement.add(option);
        }
      }
-     
+
      function changeEars(index) {
           var pathes =  ListOfEars[index].path;
-          
+
           for (var i = 0; i < pathes.length; i++) {
            var ears = document.getElementById('ears' + i);
            ears.setAttribute('d', pathes[i]);
@@ -231,8 +231,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="EyebrowSelector" class="control-label">Eyebrows:</label>
-        <select id="EyebrowSelector" class="form-control" onchange="changeEyebrows(this.selectedIndex)">
+        <label for="eyebrowSelector" class="control-label">Eyebrows:</label>
+        <select id="eyebrowSelector" class="form-control" onchange="changeEyebrows(this.selectedIndex)">
         </select>
       </div>
       <div class="form-group">
@@ -283,8 +283,8 @@
         <path id="hair0" d="" />
         <path id="hair1" d="" />
         <path id="hair2" d="" />
-        <path id="Eyebrow0" d="" />
-        <path id="Eyebrow1" d="" />
+        <path id="eyebrow0" d="" />
+        <path id="eyebrow1" d="" />
       </svg>
     </div>
     <script src="js/bootstrap.min.js"></script>
