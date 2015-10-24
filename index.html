@@ -43,27 +43,35 @@
          headElement.add(option);
        }
      }
-
-     function changeBeard(index) {
-       var beard = document.getElementById('beard');
-       var path =  ListOfBeards[index].path;
-       beard.setAttribute('d', path);
+     
+     function changeEyebrows(index) {
+         var pathes =  ListOfEyebrows[index].path;
+         
+         for (var i = 0; i < pathes.length; i++) {
+             var eyes = document.getElementById('Eyebrow' + i);
+             Eyebrow.setAttribute('d', pathes[i]);
+         }
      }
+     
 
-     function fillBeardSelector() {
-       var beardElement = document.getElementById('beardSelector');
-       for (var i=0; i < ListOfBeards.length; i++) {
+     function fillEyebrowSelector() {
+       var EyebrowElement = document.getElementById('EyebrowSelector');
+       for (var i=0; i < ListOfEyebrows.length; i++) {
          var option = document.createElement('option');
-         option.text = ListOfBeards[i].name;
-         beardElement.add(option);
+         option.text = ListOfEyebrows[i].name;
+         EyebrowElement.add(option);
        }
      }
-
+     
      function changeEyes(index) {
-       var eyes = document.getElementById('eyes');
-       var path =  ListOfEyes[index].path;
-       eyes.setAttribute('d', path);
+         var pathes =  ListOfEyes[index].path;
+         
+         for (var i = 0; i < pathes.length; i++) {
+             var eyes = document.getElementById('eyes' + i);
+             eyes.setAttribute('d', pathes[i]);
+         }
      }
+     
 
      function fillEyesSelector() {
        var eyesElement = document.getElementById('eyesSelector');
@@ -93,10 +101,14 @@
      }
 
      function changeHair(index) {
-       var hair = document.getElementById('hair');
-       var path =  ListOfHairs[index].path;
-       hair.setAttribute('d', path);
+         var pathes =  ListOfHairs[index].path;
+         
+         for (var i = 0; i < pathes.length; i++) {
+             var hair = document.getElementById('hair' + i);
+             hair.setAttribute('d', pathes[i]);
+         }
      }
+     
 
      function fillHairSelector() {
        var hairElement = document.getElementById('hairSelector');
@@ -106,12 +118,15 @@
          hairElement.add(option);
        }
      }
-
+     
      function changeEars(index) {
-       var ears = document.getElementById('ears');
-       var path =  ListOfEars[index].path;
-       ears.setAttribute('d', path);
-     }
+          var pathes =  ListOfEars[index].path;
+          
+          for (var i = 0; i < pathes.length; i++) {
+           var ears = document.getElementById('ears' + i);
+           ears.setAttribute('d', pathes[i]);
+       }
+      }
 
      function fillEarsSelector() {
        var earsElement = document.getElementById('earsSelector');
@@ -128,7 +143,7 @@
        fillHairSelector();
        fillEarsSelector();
        fillEyesSelector();
-       fillBeardSelector();
+       fillEyebrowSelector();
      }
 
      function getSVG() {
@@ -216,8 +231,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="beardSelector" class="control-label">Beard:</label>
-        <select id="beardSelector" class="form-control" onchange="changeBeard(this.selectedIndex)">
+        <label for="EyebrowSelector" class="control-label">Eyebrows:</label>
+        <select id="EyebrowSelector" class="form-control" onchange="changeEyebrows(this.selectedIndex)">
         </select>
       </div>
       <div class="form-group">
@@ -253,12 +268,23 @@
            xmlns="http://www.w3.org/2000/svg">
         <path id="head0" d="" />
         <path id="head1" d="" />
+        <path id="mouth0" d="" />
         <path id="mouth1" d="" />
-        <path id="mouth2" d="" />
-        <path id="eyes" d="" />
-        <path id="ears" d="" />
-        <path id="hair" d="" />
-        <path id="beard" d="" />
+        <path id="eyes0" d="" />
+        <path id="eyes1" d="" />
+        <path id="eyes2" d="" />
+        <path id="ears0" d="" />
+        <path id="ears1" d="" />
+        <path id="ears2" d="" />
+        <path id="ears3" d="" />
+        <path id="ears4" d="" />
+        <path id="ears5" d="" />
+        <path id="ears6" d="" />
+        <path id="hair0" d="" />
+        <path id="hair1" d="" />
+        <path id="hair2" d="" />
+        <path id="Eyebrow0" d="" />
+        <path id="Eyebrow1" d="" />
       </svg>
     </div>
     <script src="js/bootstrap.min.js"></script>
