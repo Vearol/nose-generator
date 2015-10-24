@@ -73,11 +73,14 @@
          eyesElement.add(option);
        }
      }
-
+     
      function changeMouth(index) {
-       var mouth = document.getElementById('mouth');
-       var path =  ListOfLips[index].path;
-       mouth.setAttribute('d', path);
+     var pathes =  ListOfLips[index].path;
+     
+     for (var i = 0; i < pathes.length; i++) {
+           var mouth = document.getElementById('mouth' + i);
+           mouth.setAttribute('d', pathes[i]);
+       }
      }
 
      function fillMouthSelector() {
@@ -250,7 +253,8 @@
            xmlns="http://www.w3.org/2000/svg">
         <path id="head0" d="" />
         <path id="head1" d="" />
-        <path id="mouth" d="" />
+        <path id="mouth1" d="" />
+        <path id="mouth2" d="" />
         <path id="eyes" d="" />
         <path id="ears" d="" />
         <path id="hair" d="" />
