@@ -24,6 +24,8 @@
     <script src="js/eyes.js"></script>
     <script src="js/hair.js"></script>
     <script src="js/beards.js"></script>
+    <script src="js/beardz.js"></script>
+    <script src="js/nose.js"></script>
     <script type="text/javascript">
 
      function changeHead(index) {
@@ -43,16 +45,50 @@
          headElement.add(option);
        }
      }
-
+     function changeNose(index) {
+         var pathes =  ListOfNoses[index].path;
+         
+         for (var i = 0; i < pathes.length; i++) {
+             var nose = document.getElementById('nose' + i);
+             nose.setAttribute('d', pathes[i]);
+         }
+     }
+     
+     function fillNoseSelector() {
+         var noseElement = document.getElementById('noseSelector');
+         for (var i=0; i < ListOfNoses.length; i++) {
+             var option = document.createElement('option');
+             option.text = ListOfNoses[i].name;
+             noseElement.add(option);
+         }
+     }
+     
+     function changeBeard(index) {
+         var pathes =  ListOfBeards[index].path;
+         
+         for (var i = 0; i < pathes.length; i++) {
+             var beard = document.getElementById('beard' + i);
+             beard.setAttribute('d', pathes[i]);
+         }
+     }
+     
+     function fillBeardSelector() {
+         var beardElement = document.getElementById('beardSelector');
+         for (var i=0; i < ListOfBeards.length; i++) {
+             var option = document.createElement('option');
+             option.text = ListOfBeards[i].name;
+             beardElement.add(option);
+         }
+     }
+     
      function changeEyebrows(index) {
          var pathes =  ListOfEyebrows[index].path;
-
+         
          for (var i = 0; i < pathes.length; i++) {
              var eyebrow = document.getElementById('eyebrow' + i);
              eyebrow.setAttribute('d', pathes[i]);
          }
      }
-
 
      function fillEyebrowSelector() {
        var eyebrowElement = document.getElementById('eyebrowSelector');
@@ -138,12 +174,14 @@
      }
 
      function mainLoad() {
-       fillHeadSelector();
-       fillMouthSelector();
-       fillHairSelector();
-       fillEarsSelector();
-       fillEyesSelector();
-       fillEyebrowSelector();
+         fillHeadSelector();
+         fillMouthSelector();
+         fillHairSelector();
+         fillEarsSelector();
+         fillEyesSelector();
+         fillEyebrowSelector();
+         fillBeardSelector();
+         fillNoseSelector();
      }
 
      function getSVG() {
@@ -184,7 +222,7 @@
        width: 300px;
        height: 100%;
        float: left;
-       padding: 25px;
+       padding: 12px;
      }
 
      div.leftpart select {
@@ -236,56 +274,69 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="mouthSelector" class="control-label">Mouth:</label>
-        <select id="mouthSelector" class="form-control" onchange="changeMouth(this.selectedIndex)">
-        </select>
+          <label for="noseSelector" class="control-label">Nose:</label>
+          <select id="noseSelector" class="form-control" onchange="changeNose(this.selectedIndex)">
+          </select>
       </div>
       <div class="form-group">
-        <label for="hairSelector" class="control-label">Hair:</label>
-        <select id="hairSelector" class="form-control" onchange="changeHair(this.selectedIndex)">
-        </select>
+          <label for="mouthSelector" class="control-label">Mouth:</label>
+          <select id="mouthSelector" class="form-control" onchange="changeMouth(this.selectedIndex)">
+          </select>
       </div>
       <div class="form-group">
-        <label for="eyesSelector" class="control-label">Eyes:</label>
-        <select id="eyesSelector" class="form-control" onchange="changeEyes(this.selectedIndex)">
-        </select>
+          <label for="beardSelector" class="control-label">Facial Hair:</label>
+          <select id="beardSelector" class="form-control" onchange="changeBeard(this.selectedIndex)">
+          </select>
       </div>
       <div class="form-group">
-        <label for="earsSelector" class="control-label">Ears:</label>
-        <select id="earsSelector" class="form-control" onchange="changeEars(this.selectedIndex)">
-        </select>
+          <label for="hairSelector" class="control-label">Hair:</label>
+          <select id="hairSelector" class="form-control" onchange="changeHair(this.selectedIndex)">
+          </select>
+      </div>
+      <div class="form-group">
+          <label for="eyesSelector" class="control-label">Eyes:</label>
+          <select id="eyesSelector" class="form-control" onchange="changeEyes(this.selectedIndex)">
+          </select>
+      </div>
+      <div class="form-group">
+          <label for="earsSelector" class="control-label">Ears:</label>
+          <select id="earsSelector" class="form-control" onchange="changeEars(this.selectedIndex)">
+          </select>
       </div>
       <br/>
       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" onClick="getSVG()">Save SVG</button>
     </div>
     <div class="rightpart">
-      <svg id="mySVG"
-           version="1.1"
-           baseProfile="full"
-           viewBox="0 0 500 500"
-           height="500"
-           width="500"
-           xmlns="http://www.w3.org/2000/svg">
-        <path id="head0" d="" />
-        <path id="head1" d="" />
-        <path id="mouth0" d="" />
-        <path id="mouth1" d="" />
-        <path id="eyes0" d="" />
-        <path id="eyes1" d="" />
-        <path id="eyes2" d="" />
-        <path id="ears0" d="" />
-        <path id="ears1" d="" />
-        <path id="ears2" d="" />
-        <path id="ears3" d="" />
-        <path id="ears4" d="" />
-        <path id="ears5" d="" />
-        <path id="ears6" d="" />
-        <path id="hair0" d="" />
-        <path id="hair1" d="" />
-        <path id="hair2" d="" />
-        <path id="eyebrow0" d="" />
-        <path id="eyebrow1" d="" />
-      </svg>
+        <svg id="mySVG"
+             version="1.1"
+             baseProfile="full"
+             viewBox="0 0 500 500"
+             height="500"
+             width="500"
+             xmlns="http://www.w3.org/2000/svg">
+            <path id="head0" d="" />
+            <path id="head1" d="" />
+            <path id="mouth0" d="" />
+            <path id="mouth1" d="" />
+            <path id="eyes0" d="" />
+            <path id="eyes1" d="" />
+            <path id="eyes2" d="" />
+            <path id="ears0" d="" />
+            <path id="ears1" d="" />
+            <path id="ears2" d="" />
+            <path id="ears3" d="" />
+            <path id="ears4" d="" />
+            <path id="ears5" d="" />
+            <path id="ears6" d="" />
+            <path id="hair0" d="" />
+            <path id="hair1" d="" />
+            <path id="hair2" d="" />
+            <path id="eyebrow0" d="" />
+            <path id="eyebrow1" d="" />
+            <path id="beard0" d="" />
+            <path id="beard1" d="" />
+            <path id="nose0" d="" />
+        </svg>
     </div>
     <script src="js/bootstrap.min.js"></script>
   </body>
